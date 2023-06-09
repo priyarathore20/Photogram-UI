@@ -19,9 +19,9 @@ import {
   Switch,
 } from '@mui/material';
 
-const Sidebar = () => {
+const Sidebar = ({ Mode, setMode }) => {
   return (
-    <Box flex={3} marginRight={10} p={2} sx={{ display: { xs: 'none', sm: 'block' } }}>
+    <Box flex={1} marginRight={0} p={2} sx={{ display: { xs: 'none', sm: 'block' } }}>
       <Box position="fixed">
         <List>
           <ListItem disablePadding>
@@ -85,7 +85,7 @@ const Sidebar = () => {
               <ListItemIcon>
                 <ModeNight />
               </ListItemIcon>
-              <Switch defaultChecked />
+              <Switch defaultChecked onChange={e => setMode(Mode === 'light' ? 'dark' : 'light')} />
             </ListItemButton>
           </ListItem>
         </List>
